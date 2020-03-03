@@ -11,7 +11,7 @@ function Index({car}) {
         <div className="car__Cards">
             <div className="card mb-4 mt-3">
                 <div className="img-wrapper">
-                    <Link to={`/detail/${car.id}`} className="car__cards__href card-title">
+                    <Link to={`/detail/${car.id}`} className="car__cards__href img-hover card-title">
                         <img alt="" className="card-img-top m-auto" src={car.img_url}/>
                         <div className="img-overlay">
                             <div className="card-title">

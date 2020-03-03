@@ -29,3 +29,15 @@
 .img-overlay  .card-title{
     margin-left:1.25rem      /* make sure card-title is aligned with the card-body*/
 }
+.img-hover {
+  height: 300px;
+  overflow: hidden;
+}
+.img-hover img {
+  transition: transform 2s, filter 1.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.img-hover:hover img {
+  transform: scale(1.1);
+}
