@@ -37,7 +37,7 @@ export function fetchCars() {
     return function (dispatch) {
         dispatch(requestCars());
 
-        return fetch(`${api_url}/models`)
+        return fetch(`${api_url}models`)
             .then(
                 response => response.json(),
                 error => console.log("An error occurred.", error)

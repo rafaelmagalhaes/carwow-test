@@ -12,10 +12,10 @@ const HomePage = props => {
             {isFetching || !cars.length ? (
                 <Loader/>
             ) : (
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row pt-3">
                         {cars.map(car => (
-                            <div className="col-xl-4 mb-3" key={car.id}>
+                            <div className="col-xl-3 mb-3" key={car.id}>
                                 <Cars car={car} />
                             </div>
                         ))}
