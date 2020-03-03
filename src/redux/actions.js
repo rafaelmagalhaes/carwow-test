@@ -4,7 +4,7 @@ export const RECEIVE_CARS = "RECEIVE_CARS";
 export const REQUEST_SINGLE_CAR = "REQUEST_SINGLE_CAR";
 export const RECEIVE_SINGLE_CAR = "RECEIVE_SINGLE_CAR";
 
-let api_url = 'https://warm-dawn-92320.herokuapp.com/models';
+let api_url = 'https://warm-dawn-92320.herokuapp.com/';
 
 function requestCars() {
     return {
@@ -37,7 +37,7 @@ export function fetchCars() {
     return function (dispatch) {
         dispatch(requestCars());
 
-        return fetch(api_url)
+        return fetch(`${api_url}/models`)
             .then(
                 response => response.json(),
                 error => console.log("An error occurred.", error)
@@ -51,7 +51,7 @@ export function fetchCars() {
 export function fetchSingleCar(id) {
     return function (dispatch) {
         dispatch(requestSingleCar());
-        return fetch(`${api_url}/${id}`)
+        return fetch(`${api_url}model/${id}`)
             .then(
                 response => response.json(),
                 error => console.log("An error occurred.", error)
