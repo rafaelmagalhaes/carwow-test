@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {fetchCars} from "../redux/actions";
 import Cars from "../components/Cars/"
+import Loader from '../components/Loader'
 import {useDispatch, useSelector} from "react-redux";
 
 
@@ -9,7 +10,7 @@ const HomePage = props => {
     return (
         <div className="App">
             {isFetching || !cars.length ? (
-                <span>Loading...</span>
+                <Loader/>
             ) : (
                 <div className="container">
                     <div className="row pt-3">

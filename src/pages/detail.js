@@ -1,24 +1,20 @@
 import React, {useEffect} from 'react'
-import {fetchSingleRepo} from "../redux/actions";
+import {fetchSingleCar} from "../redux/actions";
 import {useDispatch, useSelector} from 'react-redux'
-import Repos from "../components/Repos";
 import Loader from '../components/Loader'
-
-const RepoPage = props => {
-    const {repo, isFetching} = props;
+import SingleCar from '../components/SingleCar'
+const DetailPage = props => {
+    const {car, isFetching} = props;
     return (
         <div>
             {
-                isFetching || !repo ? (
+                isFetching || !car ? (
                     <Loader/>
                 ) : (
                     <div>
                         {
-                            repo.id ? (
-                                <Repos avatar={repo.owner.avatar_url} id={repo.id}
-                                       full_name={repo.full_name}
-                                       repo={repo}
-                                       description={repo.description}/>
+                            car.id ? (
+                                <SingleCar car={car}/>
                             ) : ''
 
                         }
@@ -30,15 +26,17 @@ const RepoPage = props => {
     )
 }
 
-const ConnectedRepoPage = props => {
-    const {match: {params: {owner, repo}}} = props;
+const ConnectedDetailPage = props => {
+    const {match: {params: {id}}} = props;
     const dispatch = useDispatch();
+
     useEffect(() => {
-        dispatch(fetchSingleRepo(owner, repo))
-    }, [dispatch, owner, repo]);
-    const current_repo = useSelector(state => state.repo);
+        dispatch(fetchSingleCar(id))
+    }, [dispatch, id]);
+
+    const car = useSelector(state => state.car);
     const isFetching = useSelector(state => state.isFetching);
 
-    return <RepoPage repo={current_repo} isFetching={isFetching}/>
-}
-export default ConnectedRepoPage
+    return <DetailPage car={car} isFetching={isFetching}/>
+};
+export default ConnectedDetailPage
