@@ -28,10 +28,7 @@ function Index({car}) {
                                     ))}
                                 </div>
                             ) :
-                            (<div>
-                                    no colors
-                                </div>
-                            )
+                            ('')
                         }
                     </div>
                 </div>
