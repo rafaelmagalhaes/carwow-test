@@ -1,9 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import './assets/style/main.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/style/main.scss';
 // import Nav from './components/Nav'
-
 import HomePage from './pages/home'
 import DetailPage from './pages/detail'
 

@@ -2,7 +2,7 @@
   transition: box-shadow 0.5s ease;
   border-radius: 5px;
   box-shadow: 0 0 5px #ccc;
-  height: 350px !important;
+  height: auto;
   margin-bottom: 2rem;
 }
 .car__Cards:hover {
@@ -21,9 +21,11 @@
 }
 .car__cards__href{
     cursor: pointer;
-
     color:black;
 }
 .car__cards__href:hover{
     color: black;
+}
+.img-overlay  .card-title{
+    margin-left:1.25rem      /* make sure card-title is aligned with the card-body*/
 }
