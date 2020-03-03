@@ -10,6 +10,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-geolocated": "^3.0.1",
+    "react-graceful-image": "^1.2.12",
     "react-hook-form": "^4.10.1",
     "react-paginate": "^6.3.2",
     "react-redux": "^7.2.0",

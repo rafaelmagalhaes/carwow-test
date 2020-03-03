@@ -5,6 +5,8 @@ import {
 import './cars.css'
 import Currency from '../Helpers/currency'
 import Truncate from '../Helpers/truncate'
+import Image from "react-graceful-image";
+
 
 function Index({car}) {
     return (
@@ -12,7 +14,9 @@ function Index({car}) {
             <div className="card mb-4 mt-3">
                 <div className="img-wrapper">
                     <Link to={`/detail/${car.id}`} className="car__cards__href img-hover card-title">
-                        <img alt="" className="card-img-top m-auto" src={car.img_url}/>
+                        <Image
+                            className="card-img-top m-auto"
+                            src={car.img_url}/>
                         <div className="img-overlay">
                             <div className="card-title">
                                 {car.make} {car.model}
