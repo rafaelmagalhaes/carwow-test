@@ -1,19 +1,41 @@
 import React from 'react'
-import {
-    Link,
-} from 'react-router-dom'
+import Currency from "../Helpers/currency";
+import './singlecar.scss'
 
 function Index({car}) {
     return (
-        <div className="car__Cards">
-            <div className="card mb-4 mt-3">
-                <img alt="" className="card-img-top m-auto" src={car.img_url}/>
-                <hr/>
-                <div className="card-body">
-                    <Link to={`/detail/${car.id}`} className="car__cards__href card-title"> {car.make} {car.model}</Link>
-                    <p className="card-text">{car.summary}</p>
+        <div className=" container">
+            <div className="row">
+                <div className="col">
+                    <img alt="" className="img-fluid" src={car.img_url}/>
+                </div>
+                <div className="col">
+                    <div className="mt-5">
+                        <h2>{car.make} {car.model}</h2>
+                        <p>{car.summary}</p>
+                        <p> RRP <b> {Currency.format(car.rrp)}</b></p>
+                        <p>
+                            Recommended engines <b>{car.recommended_engine}</b>
+                        </p>
+                        <div>
+                            {car.available_colors.length ? (
+                                    <div>
+                                        <p>Available colours</p>
+                                        {car.available_colors.map(color => (
+                                            <div className="color-palette" style={{backgroundColor: color}}></div>
+                                        ))}
+                                    </div>
+                                ) :
+                                (<div>
+                                        no colors
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     )
 }

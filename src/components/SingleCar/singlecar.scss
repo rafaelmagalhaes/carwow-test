@@ -1,0 +1,11 @@
+.color-palette {
+  border: 1px solid rgba(33, 34, 36, .15);
+  display: inline-flex;
+  margin:1%;
+  flex-shrink: 0;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px 0 rgba(33, 34, 36, .3);
+  height: 48px;
+  width: 48px;
+  position: relative;
+}
