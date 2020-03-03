@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './assets/style/main.scss';
-// import Nav from './components/Nav'
+import Nav from './components/Nav'
 import HomePage from './pages/home'
 import DetailPage from './pages/detail'
 
@@ -10,7 +10,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <React.Fragment>
-                    {/*<Nav/>*/}
+                    <Nav/>
                     <main className="main-content">
                         <Switch>
                             <Route exact path="/" component={HomePage}/>
