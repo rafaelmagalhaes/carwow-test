@@ -26,7 +26,7 @@ function Index({car}) {
                     <p className="card-title">
                         RRP {Currency.format(car.rrp)}
                     </p>
-                    <p className="card-text">{Truncate(car.summary, 80)}</p>
+                    <p className="card-text">{Truncate(car.summary, 75)}</p>
                     <Link to={`/detail/${car.id}`}
                           className="btn btn-block">
                         See more
