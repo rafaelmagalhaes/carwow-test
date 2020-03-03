@@ -36,7 +36,7 @@ const cars = (
         case RECEIVE_SINGLE_CAR:
             return Object.assign({}, state, {
                 isFetching: false,
-                car: mergeById([action.car], state.cars)
+                cars: mergeById([action.car], state.cars)
             });
         default:
             return state;

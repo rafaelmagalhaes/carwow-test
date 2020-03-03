@@ -16,9 +16,7 @@ const DetailPage = props => {
                             car.id ? (
                                 <SingleCar car={car}/>
                             ) : ''
-
                         }
-
                     </div>
                 )
             }
@@ -34,7 +32,8 @@ const ConnectedDetailPage = props => {
         dispatch(fetchSingleCar(id))
     }, [dispatch, id]);
 
-    const car = useSelector(state => state.car);
+    const car = useSelector(state => state.cars.find(car => car.id === parseInt(id)));
+
     const isFetching = useSelector(state => state.isFetching);
 
     return <DetailPage car={car} isFetching={isFetching}/>
