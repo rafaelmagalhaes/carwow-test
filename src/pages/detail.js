@@ -6,12 +6,12 @@ import SingleCar from '../components/SingleCar'
 const DetailPage = props => {
     const {car, isFetching} = props;
     return (
-        <div>
+        <div className="detail_page_container">
             {
                 isFetching || !car ? (
                     <Loader/>
                 ) : (
-                    <div>
+                    <div className="h-100">
                         {
                             car.id ? (
                                 <SingleCar car={car}/>
