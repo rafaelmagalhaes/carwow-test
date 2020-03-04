@@ -6,34 +6,34 @@ export const RECEIVE_SINGLE_CAR = "RECEIVE_SINGLE_CAR";
 
 let api_url = 'https://warm-dawn-92320.herokuapp.com/';
 
-function requestCars() {
+const requestCars = () => {
     return {
         type: REQUEST_CARS
     };
-}
+};
 
 
-function receiveCars(data) {
+const receiveCars = (data) => {
     return {
         type: RECEIVE_CARS,
         cars: data
     };
-}
+};
 
-function requestSingleCar() {
+const requestSingleCar = () =>{
     return {
         type: REQUEST_SINGLE_CAR
     };
-}
+};
 
-function receiveSingleCar(data) {
+const receiveSingleCar = (data) => {
     return {
         type: RECEIVE_SINGLE_CAR,
         car: data
     };
-}
+};
 
-export function fetchCars() {
+export const  fetchCars = () => {
     return function (dispatch) {
         dispatch(requestCars());
 
@@ -43,12 +43,12 @@ export function fetchCars() {
                 error => console.log("An error occurred.", error)
             )
             .then(json => {
-                dispatch(receiveCars(json))
+                dispatch(receiveCars(json));
             });
     };
-}
+};
 
-export function fetchSingleCar(id) {
+export const fetchSingleCar = (id) => {
     return function (dispatch) {
         dispatch(requestSingleCar());
         return fetch(`${api_url}model/${id}`)
@@ -59,4 +59,4 @@ export function fetchSingleCar(id) {
             .then(json => dispatch(receiveSingleCar(json)));
 
     };
-}
+};
